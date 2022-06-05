@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" href="img/loggo.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Tapestry&display=swap" rel="stylesheet">
+        <title>Corn's hotel</title>
+    </head>
+    <body class="wrapper">
+        <header class="container">
+            <img src="img/loggo.ico" alt="">
+            <nav>
+                <ul class="links">
+                    <li class="link"><a href="#">Home</a></li>
+                    <li class="link"><a href="#">News</a></li>
+                    <li class="link"><a href="#">contacts</a></li>
+                </ul>
+            </nav>
+            <div class="auth">
+                <a href="#">Log in</a>
+                <span>|</span>
+                <a href="#">Sign Up</a>
+            </div>
+        </header>
+        <main>
+            <section>
+                <div class="box">
+                    <div class="square" style="--i:0;"></div>
+                    <div class="square" style="--i:1;"></div>
+                    <div class="square" style="--i:2;"></div>
+                    <div class="square" style="--i:3;"></div>
+                    <form class="form" action="index.html" method="post">
+                        <h1>Booking</h1>
+                        <input type="text" name="name" placeholder="Name">
+                        <input type="text" name="address" placeholder="Address">
+                        <select name="city[]">
+                            <option>Skolenovstanovo</option>
+                            <option>Mojempofftorit</option>
+                            <option>Nemnogopoterpetelsk</option>
+                        </select>
+                        <div class="switch">
+                            <h3>services</h3>
+                            <label for="lunch">lunch<input id="lunch" type="checkbox"></label>
+                            <label for="bed">bed<input id="bed" type="checkbox"></label>
+                            <label for="Taxi">taxi<input id="Taxi" type="checkbox"></label>
+                        </div >
+                        <input type="submit" name="send" value="Send">
+                    </form>
+                </div>
+            </section>
+        </main>
+        <footer class="container">
+            <img src="img/loggo.ico" alt="">
+            <nav>
+                <ul class="links">
+                    <li class="link"><a href="#">instagram</a></li>
+                    <li class="link"><a href="#">twitter</a></li>
+                    <li class="link"><a href="#">Facebook</a></li>
+                </ul>
+            </nav>
+            <div></div>
+        </footer>
+    </body>
+</html>
