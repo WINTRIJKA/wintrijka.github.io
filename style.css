@@ -1,0 +1,342 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+/* Body */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+
+}
+
+.wrapper::before {
+    display: block;
+    content: '';
+    position: absolute;
+    height: 100%;
+    background: url("../img/bgg.jpg") center no-repeat;
+    opacity: .8;
+    z-index: -1;
+    width: 100%;
+    background-size: cover;
+}
+
+/* main */
+main {
+    flex: 1 0 auto;
+}
+
+/* Img */
+img {
+    height: 70px;
+}
+
+/* Container header, footer */
+.container {
+    padding: 20px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 10px 10px #fce1f2;
+}
+/* NAV */
+nav {
+
+    text-transform: lowercase;
+    width: 50vh;
+    margin: 0 auto;
+}
+
+.links {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    justify-content: space-around;
+}
+
+.link {
+    position: relative;
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+}
+
+a {
+    z-index: 1;
+    color: #ffffeb;
+    text-decoration: none;
+    font-family: 'Tapestry', cursive;
+    font-size: 20pt;
+}
+
+.link:before {
+    content: "";
+    position: absolute;
+    height: 33.33%;
+    width: 0;
+    background-color: #64c8d1;
+    right: 0;
+    z-index: 0;
+    top: 33.33%;
+    transition: all 0.5s;
+}
+
+.link:after {
+    content: "";
+    position: absolute;
+    height: 33.33%;
+    width: 0;
+    background-color: #64c8d1;
+    left: 0;
+    z-index: 0;
+    bottom: 0;
+    transition: all 0.5s;
+}
+
+a:before {
+    position: absolute;
+    content: "";
+    height: 33.33%;
+    width: 0;
+    background-color: #64c8d1;
+    bottom: 66.66%;
+    left: 0;
+    transition: all 0.5s;
+
+
+}
+
+.link:hover:before,
+.link:hover:after,
+.link:hover a:before {
+    width: 100%;
+
+}
+
+a:active {
+    color: #a970b3;
+}
+
+/* span */
+span {
+    color: #ffffeb;
+}
+
+/* auth */
+.auth > a {
+    position: relative;
+    font-family: 'Tapestry', cursive;
+    text-transform: lowercase;
+    font-size: 14pt;
+    text-decoration: none;
+    color: #ffffeb;
+
+}
+
+.auth > a:after {
+    content: "";
+    position: absolute;
+    background-color: #ffffeb;
+    width: 0;
+    left: 0;
+    height: 2px;
+    bottom: -10px;
+    transition: .3s;
+}
+
+.auth > a:hover:after {
+    width: 100%;
+}
+
+.auth > a:hover:active {
+    color: #a970b3;
+}
+
+/* footer */
+.footer {
+    flex: 0 0 auto;
+}
+
+footer div:last-child {
+    width: 115px;
+    height: 24px;
+    content: "";
+}
+
+/* form */
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Tapestry', cursive;
+}
+
+
+.box {
+    position: relative;
+}
+
+.box .square {
+    position: absolute;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    animation: animate 10s linear infinite;
+    animation-delay: calc(-1s * var(--i));
+}
+
+@keyframes animate {
+    0%, 100% {
+        transform: translateY(-40px);
+    }
+    50% {
+        transform: translateY(40px);
+    }
+}
+
+.box .square:nth-child(1) {
+    top: -50px;
+    right: -60px;
+    width: 100px;
+    height: 100px;
+}
+
+.box .square:nth-child(2) {
+    top: 150px;
+    left: -100px;
+    width: 120px;
+    height: 120px;
+    z-index: 2;
+}
+
+.box .square:nth-child(3) {
+    bottom: 50px;
+    right: -60px;
+    width: 80px;
+    height: 80px;
+    z-index: 2;
+}
+
+.box .square:nth-child(4) {
+    bottom: -80px;
+    left: 100px;
+    width: 50px;
+    height: 50px;
+}
+
+.form {
+    position: relative;
+    flex-direction: column;
+    margin-top: 100px;
+    width: 400px;
+    min-height: 500px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.box h1, .switch h3 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.form input[type = "text"], select {
+    background: none;
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    border: 2px solid #a970b3;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: rgba(0,0,0,.6);
+    border-radius: 24px;
+    transition: .25s;
+}
+select {
+    width: 56%;
+}
+.form input[type = "text"]:focus, .form select:focus {
+    width: 280px;
+    border-color: #fbff8a;
+}
+.form input[type = "submit"] {
+    background: linear-gradient(90deg,#755bea,#ff72c0);
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 0;
+    padding: 14px 40px;
+    width: 200px;
+    outline: none;
+    letter-spacing: 2px;
+    border-radius: 24px;
+    transition: .4s;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.form input[type = "submit"]:hover {
+    background: linear-gradient(90deg,#ff72c0,#755bea);
+}
+.form input[type = "submit"]:active {
+    background: linear-gradient(90deg,#fcf005,#fcf9b3);
+    border-color: #fbff8a;
+    color: rgba(0,0,0,.7);
+}
+
+input[type="checkbox"] {
+    position: relative;
+    margin-left: 20px;
+    width: 60px;
+    height: 30px;
+    -webkit-appearance: none;
+    outline: none;
+    background: #c6c6c6;
+    border-radius: 20px;
+    transition: .5s;
+    box-shadow: inset 0 0 5px rgba(0,0,0,.2);
+}
+input:checked[type="checkbox"] {
+    background: #fbff8a;
+}
+input[type="checkbox"]:before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    background: #fff;
+    transition: .5s;
+    transform: scale(1.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+}
+input:checked[type="checkbox"]:before {
+    left: 30px;
+}
+input, label {
+    display: block;
+}
+label {
+    color: rgba(0,0,0,.7);
+}
